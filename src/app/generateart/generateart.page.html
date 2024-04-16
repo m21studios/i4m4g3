@@ -1,0 +1,63 @@
+<ion-header [translucent]="true" class="ion-no-border">
+  <ion-toolbar  color="light" class="ion-padding">
+    <i class='bx bx-menu' style="font-size: 22px; font-weight: 400;" slot="start" (click)="presentPopover($event)"></i>
+    <ion-title class="ion-text-center">AImage</ion-title>
+    <i class='bx bx-log-out' style="font-size: 20px;" slot="end" (click)="SignOut()"></i>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true" class="ion-padding">
+
+  <ion-popover  #popover  mode="ios" [isOpen]="isPopoverOpen">
+    <ng-template>
+      <app-popover-content>
+        <ion-content class="ion-padding">
+          <h1 class="ion-text-center">Hello!</h1>
+          <ion-list lines="none">
+            <ion-item >
+              <i class='bx bx-mail-send' style="font-size: 20px;" slot="start"></i> <span>Conctac us</span>
+            </ion-item>
+            <ion-item >
+              <i class='bx bxs-book-open' style="font-size: 20px;" slot="start"></i> <span>About</span>
+            </ion-item>
+            
+          </ion-list>
+        </ion-content>
+      </app-popover-content>
+
+    </ng-template>
+  </ion-popover>
+
+  <div class="header-content">
+    <h1 class="text-color">Generated art</h1>
+    <i class='bx bx-chevron-right' style="font-size: 24px; font-weight: 300;"></i>
+  </div>
+  <br>
+  <swiper-container [slidesPerView]="1.2" [spaceBetween]="20">
+    <swiper-slide *ngFor="let image of images">
+      <img src="{{image.url}}" alt="" class="image-content" (click)="viewImagen(image.url)">
+    </swiper-slide>
+
+  </swiper-container>
+
+  <br>
+
+  <div class="header-content">
+    <h1 class="text-color">AImage Art</h1>
+  </div>
+  <br>
+
+  <div class="masonry-container">
+    <div class="masonry-item animate__animated animate__bounceInUp" *ngFor="let image_art of images_art">
+      <img src="{{image_art.url}}" alt="" (click)="viewImagen(image_art.url)">
+    </div>
+  </div>
+
+  <ion-fab slot="fixed" vertical="bottom" horizontal="end">
+    <ion-fab-button (click)="CreateImage()" color="main">
+      <i class='bx bx-image-add' style="font-size: 24px; font-weight: 500;"></i>
+    </ion-fab-button>
+  </ion-fab>
+
+
+</ion-content>

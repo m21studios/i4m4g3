@@ -1,0 +1,51 @@
+
+<ion-content [fullscreen]="true" class="ion-padding">
+  <div class="backbtn">
+    <i class='bx bx-arrow-back text-color' style="font-size: 24px; font-weight: 400;" (click)="backToMain()"></i>
+  </div>
+  <div  alt="" class="image-preview animate__animated animate__shakeY" >
+    <div class="previeText" *ngIf="viewText == true">
+      <div class="vspace"></div>
+      <div class="vspace"></div>
+      <div class="vspace"></div>
+      <div class="vspace"></div>
+      <i class='bx bx-loader-circle' style="font-size: 64px;"></i>
+      <h1 class="ion-text-center" style="font-size: 42px; font-weight: 200;">Generating...</h1>
+    </div>
+    <img src="{{image_url}}" alt="" *ngIf="viewImage == true" style="width: 100%; height: 100%; object-fit: cover; z-index: 10; border-radius: 20px 20px 20px 20px;">
+  </div>
+
+  <br>
+  <ion-item lines="none">
+    <ion-textarea label="Generate Image" labelPlacement="stacked" color="main" placeholder="Enter prompt" [counter]="true"
+    maxlength="500" [autoGrow]="true" [(ngModel)]="enterPrompt">
+
+    </ion-textarea>
+  </ion-item>
+
+  <ion-grid>
+    <ion-row>
+      <ion-col size="6">
+        <ion-button color="main" expand="block" mode="ios" *ngIf="download == true" fill="outline">DOWNLOAD</ion-button>
+      </ion-col>
+      <ion-col size="6">
+        <ion-button color="main" expand="block" mode="ios" (click)="GenerateImagen()">GENERATE</ion-button>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+  <ion-list lines="none">
+    <ion-item *ngFor="let promp of prompts">
+      <ion-thumbnail slot="start">
+        <img src="{{promp.image}}" alt="">
+      </ion-thumbnail>
+      <ion-label>
+        <p>{{promp.prompt}}</p>
+      </ion-label>
+    </ion-item>
+  </ion-list>
+
+
+</ion-content>
+
+

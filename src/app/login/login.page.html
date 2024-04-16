@@ -1,0 +1,40 @@
+
+<ion-content [fullscreen]="true" class="ion-padding">
+  <img src="../../assets/logo.png" alt="" class="logo">
+  <h1 class="ion-text-center" style="margin-top: 5%; font-weight: 400; font-size: 62px;">
+    AImagen
+  </h1>
+
+  <p class="ion-text-center" style="font-size: 22px;">
+    Lorem ipsum dolor sit amet.
+  </p>
+
+  <ion-list lines="none">
+    <ion-input
+      label="Email" 
+      labelPlacement="stacked"
+      placeholder="User@email.com"
+      type="email"
+      fill="outline"
+    >
+    <i class='bx bxs-envelope' slot="end" class="font-size:22px;"></i>
+    </ion-input>
+    <br>
+    <ion-input
+      label="Password" 
+      labelPlacement="stacked"
+      placeholder="* * * * * *"
+      type="password"
+      fill="outline"
+    >
+    <i class='bx bxs-lock-open' slot="end" class="font-size:22px;"></i>
+    </ion-input>
+    <div class="vspace"></div>
+
+    <ion-button mode="ios" (click)="GoGenerate()" expand="block" color="main">SignIn</ion-button>
+    <div class="vspace"></div>
+    <p class="ion-text-center">
+      No have an Account? <strong (click)="GoRegister()">Register Here!</strong>
+    </p>
+  </ion-list>
+</ion-content>

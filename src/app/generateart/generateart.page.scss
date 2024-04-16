@@ -1,0 +1,35 @@
+.header-content {
+    width: 100%;
+    height: 32px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    h1 {
+        font-size: 28px;
+        font-weight: 500;
+    }
+}
+
+.image-content {
+    width: 320px;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 15px 15px 15px 15px;
+}
+
+.masonry-container {
+    column-count: 2;
+    column-gap: 15px;
+}
+
+.masonry-item {
+    display: inline-block;
+    width: 100%;
+}
+
+.masonry-item img {
+    display: block;
+    border-radius: 15px 15px 15px 15px;
+    width: 100%;
+}
